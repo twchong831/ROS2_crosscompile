@@ -113,6 +113,8 @@ sudo apt-get install python3-pip
 pip3 install ros_cross_compile
 ```
 
+-------
+
 #### ERROR
 
 - pip3로 설치했음에도
@@ -126,11 +128,17 @@ sudo find / -name ros_cross_compile
 sudo cp ~/.local/bin/ros_cross_compile /usr/bin
 ```
 
+- exec /bin/bash: exec format error
+  - windows 11 wsl2 ubuntu22.04에서 발생
+  - 아키텍처 차이에 따른 오류...
+  - 생성된 docker 컨테이너를 모두 제거한 후 재실행하니 생성됨을 확인
+  - 이후 재 컴파일 시에 다시 발생...
+
+-------
+
 #### build
 
-- PCL 기반 point cloud를 생성하고 
-- 특정 시간마다 point cloud를 회전하여
-- 이를 publish하는 node
+- PCL 기반 point cloud를 생성하고 특정 시간마다 point cloud를 회전하여 이를 publish하는 node
 
 ```bash
 # Project 구조
